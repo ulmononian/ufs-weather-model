@@ -120,6 +120,25 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   INPES_cpl_atmw_gdas=6; JNPES_cpl_atmw_gdas=8; WPG_cpl_atmw_gdas=24
   WAV_tasks_atmw_gdas=248
 
+elif [[ $MACHINE_ID = noaacloud.* ]]; then
+
+  TPN=36
+
+  INPES_dflt=3 ; JNPES_dflt=8
+  INPES_thrd=3 ; JNPES_thrd=4
+
+  THRD_cpl_dflt=1
+  INPES_cpl_dflt=3; JNPES_cpl_dflt=8; WPG_cpl_dflt=6
+  OCN_tasks_cpl_dflt=20
+  ICE_tasks_cpl_dflt=10
+  WAV_tasks_cpl_dflt=20
+
+  THRD_cpl_thrd=2
+  INPES_cpl_thrd=3; JNPES_cpl_thrd=4; WPG_cpl_thrd=6
+  OCN_tasks_cpl_thrd=20
+  ICE_tasks_cpl_thrd=10
+  WAV_tasks_cpl_thrd=12
+
 elif [[ $MACHINE_ID = linux.* ]]; then
 
   TPN=40

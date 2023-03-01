@@ -106,10 +106,12 @@ case $(hostname -f) in
   mgmt-cameronbook-pclusternoaav2use1-00030.pw-noaa-us-east-1.pw.local) MACHINE_ID=pw-aws ;; ## parallelworks aws
 esac
 
+# Set any pw instance to "noaacloud" (temporary)
+[[ ${MACHINE_ID} =~ "pw-aws" || ${MACHINE_ID} =~ "pw-gcp" || ${MACHINE_ID} =~ pw-azure ]] && MACHINE_ID=noaacloud
+
 # Overwrite auto-detect with RT_MACHINE if set
 MACHINE_ID=${RT_MACHINE:-${MACHINE_ID}}
-echo $MACHINE_ID
-#MACHINE_ID=pw-aws
 
 # Append compiler
 MACHINE_ID=${MACHINE_ID}.${RT_COMPILER}
+
