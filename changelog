@@ -1,0 +1,18 @@
+changed the following in this clone:
+
+
+* In WW3/model/src/CMakeLists.txt, change "NOT TARGET esmf" to "NOT TARGET
+ESMF"
+* In WW3/model/src/CMakeLists.txt, change "PUBLIC esmf)" to "PUBLIC ESMF)"
+* In CMakeModules/Modules/FindESMF.cmake, change "(esmf" to "(ESMF"
+
+
+removed STATIC from PIO section of ufs-weather-model/CMakeLists.txt
+updated CMakeModules to head of develop
+
+sed -i 's/(esmf /(ESMF /g' FindESMF.cmake
+
+edit rt.sh (added noaacloud machine clauses), default_vars.sh, rt_utils.sh,
+detect_machine.sh
+
+add fv3_conf files for noaacloud
