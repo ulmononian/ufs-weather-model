@@ -102,10 +102,14 @@ case $(hostname -f) in
 
   login01.expanse.sdsc.edu) MACHINE_ID=expanse ;; ### expanse1
   login02.expanse.sdsc.edu) MACHINE_ID=expanse ;; ### expanse2
+  
+  mgmt-cameronbook-pclusternoaav2use1-00030.pw-noaa-us-east-1.pw.local) MACHINE_ID=pw-aws ;; ## parallelworks aws
 esac
 
 # Overwrite auto-detect with RT_MACHINE if set
 MACHINE_ID=${RT_MACHINE:-${MACHINE_ID}}
+echo $MACHINE_ID
+#MACHINE_ID=pw-aws
 
 # Append compiler
 MACHINE_ID=${MACHINE_ID}.${RT_COMPILER}
