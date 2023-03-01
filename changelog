@@ -1,5 +1,6 @@
 changed the following in this clone:
 
+added noaacloud modulefile and ufs_common_spack to use the spack UE from Mark
 
 * In WW3/model/src/CMakeLists.txt, change "NOT TARGET esmf" to "NOT TARGET
 ESMF"
