@@ -7,6 +7,7 @@ ESMF"
 * In WW3/model/src/CMakeLists.txt, change "PUBLIC esmf)" to "PUBLIC ESMF)"
 * In CMakeModules/Modules/FindESMF.cmake, change "(esmf" to "(ESMF"
 
+"esmf"->"ESMF" in MOM6-interface/CMakeLists.txt
 
 removed STATIC from PIO section of ufs-weather-model/CMakeLists.txt
 updated CMakeModules to head of develop
