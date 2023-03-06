@@ -107,7 +107,7 @@ case $(hostname -f) in
 esac
 
 # Set any pw instance to "noaacloud" (temporary)
-[[ ${MACHINE_ID} =~ "pw-aws" || ${MACHINE_ID} =~ "pw-gcp" || ${MACHINE_ID} =~ pw-azure ]] && MACHINE_ID=noaacloud
+[[ ${MACHINE_ID} =~ "pw-aws" || ${MACHINE_ID} =~ "pw-gcp" || ${MACHINE_ID} =~ "pw-azure" ]] && MACHINE_ID=noaacloud
 
 # Overwrite auto-detect with RT_MACHINE if set
 MACHINE_ID=${RT_MACHINE:-${MACHINE_ID}}

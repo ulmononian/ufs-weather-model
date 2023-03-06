@@ -5,14 +5,14 @@ added noaacloud modulefile and ufs_common_spack to use the spack UE from Mark
 * In WW3/model/src/CMakeLists.txt, change "NOT TARGET esmf" to "NOT TARGET
 ESMF"
 * In WW3/model/src/CMakeLists.txt, change "PUBLIC esmf)" to "PUBLIC ESMF)"
-* In CMakeModules/Modules/FindESMF.cmake, change "(esmf" to "(ESMF"
+* In CMakeModules/Modules/FindESMF.cmake, change "(esmf" to "(ESMF" via: sed -i 's/(esmf /(ESMF /g' FindESMF.cmake
+
 
 "esmf"->"ESMF" in MOM6-interface/CMakeLists.txt
 
 removed STATIC from PIO section of ufs-weather-model/CMakeLists.txt
 updated CMakeModules to head of develop
 
-sed -i 's/(esmf /(ESMF /g' FindESMF.cmake
 
 edit rt.sh (added noaacloud machine clauses), default_vars.sh, rt_utils.sh,
 detect_machine.sh
