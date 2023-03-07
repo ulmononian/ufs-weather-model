@@ -40,7 +40,7 @@ export OMP_NUM_THREADS=@[THRD]
 # Avoid job errors because of filesystem synchronization delays
 sync && sleep 1
 
-srun --mpi=pmi2 --label -n @[TASKS]./fv3.exe
+srun --mpi=pmi2 --label -n @[TASKS] ./fv3.exe
 
 echo "Model ended:    " `date`
 echo -n " $( date +%s )," >> job_timestamp.txt                                
