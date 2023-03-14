@@ -11,6 +11,10 @@ load(pathJoin("stack-intel", stack_intel_ver))
 stack_mpi_ver=os.getenv("stack_mpi_ver") or "2019.7.217"
 load(pathJoin("stack-intel-mpi", stack_mpi_ver))
 
+prepend_path("MODULEPATH", "/glade/work/jedipara/cheyenne/spack-stack/modulefiles/misc")
+miniconda3_ver=os.getenv("miniconda3_ver") or "3.9.12"
+load(pathJoin("stack-python", miniconda3_ver))
+
 load("ufs_common_spack")
 
 setenv("CC", "mpicc")
