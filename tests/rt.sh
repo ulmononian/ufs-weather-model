@@ -311,15 +311,16 @@ elif [[ $MACHINE_ID = s4.* ]]; then
 
 elif [[ $MACHINE_ID = cheyenne.* ]]; then
 
-  export PATH=/glade/p/ral/jntp/tools/miniconda3/4.8.3/envs/ufs-weather-model/bin:/glade/p/ral/jntp/tools/miniconda3/4.8.3/bin:$PATH
-  export PYTHONPATH=/glade/p/ral/jntp/tools/miniconda3/4.8.3/envs/ufs-weather-model/lib/python3.8/site-packages:/glade/p/ral/jntp/tools/miniconda3/4.8.3/lib/python3.8/site-packages
+  #export PATH=/glade/p/ral/jntp/tools/miniconda3/4.8.3/envs/ufs-weather-model/bin:/glade/p/ral/jntp/tools/miniconda3/4.8.3/bin:$PATH
+  #export PYTHONPATH=/glade/p/ral/jntp/tools/miniconda3/4.8.3/envs/ufs-weather-model/lib/python3.8/site-packages:/glade/p/ral/jntp/tools/miniconda3/4.8.3/lib/python3.8/site-packages
   ECFLOW_START=/glade/p/ral/jntp/tools/miniconda3/4.8.3/envs/ufs-weather-model/bin/ecflow_start.sh
   ECF_PORT=$(( $(id -u) + 1500 ))
 
   QUEUE=regular
   COMPILE_QUEUE=regular
   PARTITION=
-  dprefix=/glade/scratch
+  ACCNR=nral0032
+  dprefix=/glade/scratch/bcameron
   DISKNM=/glade/scratch/epicufsrt/GMTB/ufs-weather-model/RT
   STMP=$dprefix
   PTMP=$dprefix

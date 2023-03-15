@@ -12,6 +12,10 @@ set -eux
 echo -n " $( date +%s )," >  job_timestamp.txt
 echo "Compile started:  " `date`
 
+module purge
+module use /glade/scratch/bcameron/rt_work/ufs-weather-model/modulefiles
+module load ufs_cheyenne.intel
+
 @[PATHRT]/compile.sh @[MACHINE_ID] "@[MAKE_OPT]" @[COMPILE_NR]
 
 echo "Compile ended:    " `date`

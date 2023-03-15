@@ -34,7 +34,7 @@ export ESMF_RUNTIME_PROFILE_OUTPUT="SUMMARY"
 # Avoid job errors because of filesystem synchronization delays
 sync && sleep 1
 
-mpiexec_mpt -p %g: -np @[TASKS] omplace ./fv3.exe
+mpiexec -n @[TASKS] -ppn @[TPN] ./fv3.exe
 
 echo "Model ended:    " `date`
 echo -n " $( date +%s )," >> job_timestamp.txt

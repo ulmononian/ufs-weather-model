@@ -68,6 +68,9 @@ else
       modulefile="ufs_${MACHINE_ID}_debug"
     fi
   fi
+  ###cbook 3/15/23###
+  [[ $MACHINE_ID ==  cheyenne ]] && module purge
+  ###cbook 3/15/23###
   module load $modulefile
   module list
 fi
