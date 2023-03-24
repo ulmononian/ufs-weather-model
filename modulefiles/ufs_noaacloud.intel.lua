@@ -5,12 +5,9 @@ loads UFS Model prerequisites for noaacloud/intel
 
 prepend_path("MODULEPATH", "/contrib/Cameron.Book/sw/spack-stack-1.2.0/envs/unified-env-2/install/modulefiles/Core")
 
-
-hpc_intel_ver=os.getenv("hpc_intel_ver") or "2021.3.0"
-load(pathJoin("stack-intel", hpc_intel_ver))
-
-hpc_impi_ver=os.getenv("hpc_impi_ver") or "2021.3.0"
-load(pathJoin("stack-intel-oneapi-mpi", hpc_impi_ver))
+load("stack-intel")
+load("stack-intel-oneapi-mpi")
+load("cmake/3.22.1"
 
 load("ufs_common_spack")
 
