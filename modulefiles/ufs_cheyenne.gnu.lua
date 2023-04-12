@@ -11,8 +11,11 @@ load(pathJoin("stack-gcc", stack_gnu_ver))
 stack_openmpi_ver=os.getenv("stack_openmpi_ver") or "4.1.1"
 load(pathJoin("stack-openmpi", stack_openmpi_ver))
 
-miniconda3_ver=os.getenv("miniconda3_ver") or "3.9.12"
-load(pathJoin("stack-python", miniconda3_ver))
+stack_python_ver=os.getenv("stack_python_ver") or "3.9.12"
+load(pathJoin("stack-python", stack_python_ver))
+
+cmake_ver=os.getenv("cmake_ver") or "3.22.0"
+load(pathJoin("cmake", cmake_ver))
 
 load("ufs_common")
 

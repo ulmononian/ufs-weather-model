@@ -14,6 +14,9 @@ load(pathJoin("stack-openmpi", stack_openmpi_ver))
 stack_python_ver=os.getenv("stack_python_ver") or "3.9.12"
 load(pathJoin("stack-python", stack_python_ver))
 
+cmake_ver=os.getenv("cmake_ver") or "3.23.1"
+load(pathJoin("cmake", cmake_ver))
+
 load("ufs_common")
 
 setenv("CC", "mpicc")
