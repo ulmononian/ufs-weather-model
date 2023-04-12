@@ -3,7 +3,7 @@ loads UFS Model prerequisites for S4/Intel
 ]])
 
 prepend_path("MODULEPATH", "/data/prod/jedi/spack-stack-1.3.0/envs/unified-env/install/modulefiles/Core")
-prepend_path("MODULEPATH", "/scratch1/NCEPDEV/jcsda/jedipara/spack-stack/modulefiles")
+prepend_path("MODULEPATH", "/data/prod/jedi/spack-stack/modulefiles")
 
 stack_intel_ver=os.getenv("stack_intel_ver") or "2021.5.0"
 load(pathJoin("stack-intel", stack_intel_ver))
