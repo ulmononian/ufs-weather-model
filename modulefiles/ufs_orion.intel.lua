@@ -11,7 +11,6 @@ stack_impi_ver=os.getenv("stack_impi_ver") or "2021.5.1"
 load(pathJoin("stack-intel-oneapi-mpi", stack_impi_ver))
 
 prepend_path("MODULEPATH", "/work/noaa/da/role-da/spack-stack/modulefiles")
-
 miniconda3_ver=os.getenv("miniconda3_ver") or "3.9.7"
 load(pathJoin("stack-python", miniconda3_ver))
 
