@@ -7,6 +7,7 @@ whatis([===[Loads libraries needed for building the UFS Weather Model on Gaea ]=
 
 prepend_path("MODULEPATH", "/lustre/f2/dev/wpo/role.epic/contrib/spack-stack/spack-stack-1.3.0/envs/unified-env/install/modulefiles/Core")
 prepend_path("MODULEPATH", "/lustre/f2/pdata/esrl/gsd/spack-stack/modulefiles")
+prepend_path("MODULEPATH", "/lustre/f2/dev/role.epic/contrib/modulefiles")
 
 stack_intel_ver=os.getenv("stack_intel_ver") or "2021.3.0"
 load(pathJoin("stack-intel", stack_intel_ver))
