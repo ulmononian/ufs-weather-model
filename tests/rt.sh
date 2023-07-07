@@ -256,6 +256,32 @@ elif [[ $MACHINE_ID = orion ]]; then
   cp fv3_conf/fv3_slurm.IN_orion fv3_conf/fv3_slurm.IN
   cp fv3_conf/compile_slurm.IN_orion fv3_conf/compile_slurm.IN
 
+elif [[ $MACHINE_ID = hercules ]]; then
+
+  module load contrib rocoto/1.3.5
+  ROCOTORUN=$(which rocotorun)
+  ROCOTOSTAT=$(which rocotostat)
+  ROCOTOCOMPLETE=$(which rocotocomplete)
+  export PATH=/apps/spack-managed/gcc-11.3.1/miniconda3-4.10.3-un3f2xdus7rbrzgso5ketsq4gp2iociv/bin:$PATH
+  export PYTHONPATH=/apps/spack-managed/gcc-11.3.1/miniconda3-4.10.3-un3f2xdus7rbrzgso5ketsq4gp2iociv/lib/python3.9/site-packages
+
+  module use /work/noaa/epic-ps/role-epic-ps/spack-stack/modulefiles
+  module load ecflow/5.8.4-hercules
+  ECFLOW_START=/work/noaa/epic-ps/role-epic-ps/spack-stack/ecflow-5.8.4-hercules/bin/ecflow_start.sh
+  ECF_PORT=$(( $(id -u) + 1500 ))
+
+  QUEUE=windfall
+  COMPILE_QUEUE=windfall
+  PARTITION=hercules
+  dprefix=/work2/noaa/epic-ps/${USER}
+  DISKNM=/work/noaa/nems/emc.nemspara/RT
+  STMP=$dprefix/stmp
+  PTMP=$dprefix/stmp
+
+  SCHEDULER=slurm
+  cp fv3_conf/fv3_slurm.IN_hercules fv3_conf/fv3_slurm.IN
+  cp fv3_conf/compile_slurm.IN_hercules fv3_conf/compile_slurm.IN
+
 elif [[ $MACHINE_ID = jet ]]; then
 
   module load rocoto/1.3.2
@@ -551,6 +577,10 @@ if [[ $ROCOTO == true ]]; then
     QUEUE=batch
     COMPILE_QUEUE=batch
     ROCOTO_SCHEDULER=slurm
+  elif [[ $MACHINE_ID = hercules ]]; then
+    QUEUE=windfall
+    COMPILE_QUEUE=windfall
+    ROCOTO_SCHEDULER=slurm  
   elif [[ $MACHINE_ID = s4 ]]; then
     QUEUE=s4
     COMPILE_QUEUE=s4
@@ -630,6 +660,8 @@ EOF
     QUEUE=batch
   elif [[ $MACHINE_ID = orion ]]; then
     QUEUE=batch
+  elif [[ $MACHINE_ID = hercules ]]; then
+    QUEUE=windfall  
   elif [[ $MACHINE_ID = jet ]]; then
     QUEUE=batch
   elif [[ $MACHINE_ID = s4 ]]; then
