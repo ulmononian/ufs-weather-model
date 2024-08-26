@@ -202,6 +202,15 @@ if [[ ${LINK_TESTS} == true ]]; then
     fi
 fi
 
+if [[ ${UFS_TEST_YAML} == "hsd_cases.yaml" ]]; then
+    TEST_KEY="hsd_cases"
+else
+    TEST_KEY="tests"
+fi
+
+export TEST_KEY
+
+
 #Check to error out if incompatible options are chosen together
 [[ ${KEEP_RUNDIR} == true && ${delete_rundir} == true ]] && die "-k and -d options cannot be used at the same time"
 [[ ${ECFLOW} == true && ${ROCOTO} == true ]] && die "-r and -e options cannot be used at the same time"
