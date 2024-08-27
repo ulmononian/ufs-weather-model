@@ -4,7 +4,13 @@ set -eux
 function set_run_task() {
     source default_vars.sh
     source rt_utils.sh
-    source "${PATHRT}"/${TEST_KEY}/"${TEST_NAME}"
+
+    if [[ ${TEST_KEY} == "hsd_cases" ]]; then
+        source "${PATHRT}"/"${TEST_KEY}"/tests/"${TEST_NAME}"
+    elif [[ ${TEST_KEY} == "tests" ]]; then
+	source "${PATHRT}"/"${TEST_KEY}"/"${TEST_NAME}"
+    fi
+
     compute_petbounds_and_tasks
 
     TPN=$(( TPN / THRD ))
