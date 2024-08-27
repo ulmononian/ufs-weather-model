@@ -204,6 +204,7 @@ fi
 
 if [[ ${UFS_TEST_YAML} == "hsd_cases.yaml" ]]; then
     TEST_KEY="hsd_cases"
+    echo "Using HSD Cases YAML file and HSD Cases test directory."
 else
     TEST_KEY="tests"
 fi

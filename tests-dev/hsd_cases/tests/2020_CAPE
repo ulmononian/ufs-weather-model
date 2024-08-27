@@ -6,7 +6,7 @@
 
 export TEST_DESCR="Compare global control C48L127 v2.sfc results with previous trunk version"
 
-export CNTL_DIR=2020_cape
+export CNTL_DIR=2020_CAPE
 
 export LIST_FILES="sfcf000.nc \
                    sfcf024.nc \
