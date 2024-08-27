@@ -202,6 +202,8 @@ if [[ ${LINK_TESTS} == true ]]; then
     fi
 fi
 
+TEST_KEY="${TEST_KEY:-tests}"
+
 if [[ ${UFS_TEST_YAML} == "hsd_cases.yaml" ]]; then
     TEST_KEY="hsd_cases"
     echo "Using HSD Cases YAML file and HSD Cases test directory."
