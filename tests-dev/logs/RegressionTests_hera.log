@@ -1,7 +1,7 @@
 ====START OF hera REGRESSION TESTING LOG====
 
 UFSWM hash used in testing:
-390b580d0123e0744bd2de2a6779c22a264977d5
+0378dcad5f4dd95af6670061b20dcf755c8ef375
 
 Submodule hashes used in testing:
  37cbb7d6840ae7515a9a8f0dfd4d89461b3396d1 AQM (v0.2.0-37-g37cbb7d)
@@ -35,9 +35,9 @@ The second time is specifically for the run phase.
 Times/Memory will be empty for failed tests.
 
 BASELINE DIRECTORY: /scratch2/NAGAPE/epic/UFS-WM_RT/NEMSfv3gfs/develop-20240821
-COMPARISON DIRECTORY: /scratch1/NCEPDEV/stmp2/Cameron.Book/FV3_RT/rt_54512
+COMPARISON DIRECTORY: /scratch1/NCEPDEV/stmp2/Cameron.Book/FV3_RT/rt_104155
 
 UFS_TEST.SH OPTIONS USED:
 * (-a) - HPC PROJECT ACCOUNT: epic
-* (-n) - RUN SINGLE TEST: control_c48 intel
+* (-k) - KEEP RUN DIRECTORY
 * (-r) - USE ROCOTO
