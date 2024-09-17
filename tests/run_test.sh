@@ -51,13 +51,7 @@ unset UFS_CONFIGURE
 [[ -e ${RUNDIR_ROOT}/run_test_${TEST_ID}.env ]] && source "${RUNDIR_ROOT}/run_test_${TEST_ID}.env"
 source default_vars.sh
 [[ -e ${RUNDIR_ROOT}/run_test_${TEST_ID}.env ]] && source "${RUNDIR_ROOT}/run_test_${TEST_ID}.env"
-#source "tests/${TEST_NAME}"
-
-if [[ ${TEST_KEY} == "hsd_cases" ]]; then
-    source "${PATHRT}"/"${TEST_KEY}"/tests/"${TEST_NAME}"
-elif [[ ${TEST_KEY} == "tests" ]]; then
-    source "${PATHRT}"/"${TEST_KEY}"/"${TEST_NAME}"
-fi
+source "tests/${TEST_NAME}"
 
 remove_fail_test
 
