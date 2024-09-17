@@ -198,7 +198,7 @@ def sync_testscripts():
         src_name= src +'/'+ name
         dst_name= dst +'/'+ name
         if not os.path.exists(dst_name):
-            if "/compile.sh" in dst_name:
+            if name == "compile.sh":
                 shutil.copyfile(src_name, dst_name)
                 subprocess.call(['chmod', '755', dst_name])
                 with open(dst_name) as rfile:
@@ -207,7 +207,25 @@ def sync_testscripts():
                 with open(dst_name, "w") as wfile:
                     wfile.write(buildsh)
                     wfile.close()
-            else:
+
+            if name == "run_test.sh":
+                shutil.copyfile(src_name, dst_name)
+                subprocess.call(['chmod', '755', dst_name])
+                with open(dst_name) as rfile:
+                    source_upd="""\
+if [[ ${TEST_KEY} == "hsd_cases" ]]; then
+    source "${PATHRT}"/"${TEST_KEY}"/tests/"${TEST_NAME}"
+elif [[ ${TEST_KEY} == "tests" ]]; then
+    source "${PATHRT}"/"${TEST_KEY}"/"${TEST_NAME}"
+fi
+"""
+                    runtest = rfile.read().replace('source "tests/${TEST_NAME}"', source_upd)
+                    rfile.close()
+                with open(dst_name, "w") as wfile:
+                    wfile.write(runtest)
+                    wfile.close()
+
+            if name not in ["compile.sh", "run_test.sh"]:
                 os.symlink(src_name, dst_name)
                 
 def machine_check_off(machine_id, val):
