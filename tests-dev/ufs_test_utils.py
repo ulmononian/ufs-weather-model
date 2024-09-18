@@ -209,6 +209,15 @@ def sync_testscripts():
                     wfile.close()
             else:
                 os.symlink(src_name, dst_name)
+
+    dst_conf= dst +'/'+ 'build_conf'
+    src_conf= dst +'/'+ 'fv3_conf'
+    if os.path.exists(dst_conf):
+        for name in os.listdir(dst_conf):
+            src_name= src_conf +'/'+ name
+            dst_name= dst_conf +'/'+ name
+            shutil.copyfile(dst_name, src_name)
+            #subprocess.call(['chmod', '755', src_name])
                 
 def machine_check_off(machine_id, val):
     """Check turned-off machine from yaml configuration
