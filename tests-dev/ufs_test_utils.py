@@ -164,18 +164,25 @@ def create_yaml():
             if line.startswith("RUN"):  # RUN line
                 build = parse_line(line)
                 test = build[1]
+                baseline_creation = True
                 machine = build[2]
-                baseline = f"'{build[3]}'"
+                baseline = build[3]
                 depend = build[4]
+                if depend:
+                    baseline_creation = False
+                if baseline and depend:
+                    baseline_creation = False
+                if not baseline and not depend:
+                    baseline_creation = False                    
                 if (machine.find('-') != -1):
                     off_machine = machine.replace("-", "").strip()
                     off_machine = string_clean(off_machine)
                 if (machine.find('+') != -1):
                     on_machine = machine.replace("+", "").strip()
                     on_machine = string_clean(on_machine)
-                tests = f"    - {test}: {{'project':['daily']"
-                if baseline.isalnum():
-                    tests += f",'baseline': {baseline}"
+                tests = f"    - {test}: {{'project':['daily']"                    
+                if baseline_creation:
+                    tests += f",'baseline': 'True'"
                 if depend and depend.strip():
                     tests += f",'dependency':'{depend}'"
                 if not (off_machine is None):
