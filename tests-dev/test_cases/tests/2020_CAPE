@@ -46,8 +46,10 @@ export FNSMCC_control="'global_soilmgldas.statsgo.t92.192.94.grb',"
 export FNMSKH_control="'global_slmask.t62.192.94.grb',"
 
 
-export FV3_RUN=2020_CAPE.IN
+#export FV3_RUN=2020_CAPE.IN
+export FV3_RUN=test_cases.IN
 export CCPP_SUITE='FV3_GFS_v16'
 export INPUT_NML=control.nml.IN
 export HSD_CASE=true
+export CASE_NAME="2020_CAPE"
 

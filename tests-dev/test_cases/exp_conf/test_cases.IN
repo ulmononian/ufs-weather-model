@@ -16,6 +16,7 @@ echo "inputdir=$inputdir,NPX=$NPX,NESTED=$NESTED"
 OPNREQ_TEST=${OPNREQ_TEST:-false}
 V2_SFC_FILE=${V2_SFC_FILE:-false}
 HSD_CASE=${HSD_CASE:-false}
+CASE_NAME=${CASE_NAME:-}
 SUFFIX=${RT_SUFFIX}
 if [ $WARM_START = .false. ]; then
   mkdir INPUT RESTART
@@ -24,7 +25,11 @@ if [ $WARM_START = .false. ]; then
   elif [ "$V2_SFC_FILE" = "true" ]; then
     cp -r @[INPUTDATA_ROOT]/${inputdir}/INPUT_L127_v2_sfc/* ./INPUT/.
   elif [ "$HSD_CASE" = "true" ]; then
-    cp -r @[INPUTDATA_ROOT]/HSD_input_data/${inputdir}/INPUT_L127_v2_sfc/* ./INPUT/.
+    if [ "$CASE_NAME" = "2020_CAPE" ]; then
+      cp -r @[INPUTDATA_ROOT]/HSD_input_data/${inputdir}/INPUT_L127_v2_sfc/* ./INPUT/.
+    elif [ "$CASE_NAME" = "baroclinic_wave" ]; then
+      cp @[INPUTDATA_ROOT]/HSD_input_data/global_hyblev.l128.txt .
+    fi 
   else
     cp -r @[INPUTDATA_ROOT]/${inputdir}/INPUT_L127_gfsv17/* ./INPUT/.
   fi

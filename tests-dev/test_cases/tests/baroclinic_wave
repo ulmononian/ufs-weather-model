@@ -50,8 +50,9 @@ export JCHUNK3D=384
 export KCHUNK3D=1
 export OUTPUT_FH='0 6 12 18 24'
 
-export FV3_RUN=baroclinic_wave.IN
+#export FV3_RUN=baroclinic_wave.IN
+export FV3_RUN=test_cases.IN
 export INPUT_NML=baroclinic_wave.nml.IN
 export CCPP_SUITE='FV3_GFS_v17_p8_ugwpv1'
 export HSD_CASE=true
-
+export CASE_NAME="baroclinic_wave"
