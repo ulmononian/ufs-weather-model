@@ -51,4 +51,3 @@ export CCPP_SUITE='FV3_GFS_v16'
 export INPUT_NML=control.nml.IN
 export HSD_CASE=true
 export CASE_NAME="2020_CAPE"
-
