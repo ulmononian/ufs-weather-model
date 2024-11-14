@@ -29,6 +29,7 @@ if [ $WARM_START = .false. ]; then
       cp -r @[INPUTDATA_ROOT]/HSD_input_data/${inputdir}/INPUT_L127_v2_sfc/* ./INPUT/.
     elif [ "$CASE_NAME" = "baroclinic_wave" ]; then
       cp @[INPUTDATA_ROOT]/HSD_input_data/global_hyblev.l128.txt .
+      cp -r @[INPUTDATA_ROOT]/${inputdir}/INPUT_L127_gfsv17/* ./INPUT/.
     fi 
   else
     cp -r @[INPUTDATA_ROOT]/${inputdir}/INPUT_L127_gfsv17/* ./INPUT/.
